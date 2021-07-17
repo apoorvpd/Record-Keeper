@@ -2,6 +2,7 @@ package com.example.recordkeeper
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.commit
 import com.example.recordkeeper.databinding.ActivityMainBinding
 
 
@@ -16,7 +17,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        supportFragmentManager.commit {
+            add(R.id.frame_content, RunningFragment())
+        }
 
 
     }
