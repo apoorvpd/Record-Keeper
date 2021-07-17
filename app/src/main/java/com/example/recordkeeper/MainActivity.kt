@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
 //        })
 
         binding.bottomNav.setOnItemSelectedListener(this)
-
     }
 
     private fun onRunningClicked() {
