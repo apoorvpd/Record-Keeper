@@ -2,9 +2,11 @@ package com.example.recordkeeper
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.commit
 import com.example.recordkeeper.databinding.ActivityMainBinding
-
+import com.google.android.material.navigation.NavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,13 +20,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.buttonCycling.setOnClickListener {
-            onCyclingClicked()
-        }
-        binding.buttonRunning.setOnClickListener {
-            onRunningClicked()
-        }
+//        binding.buttonCycling.setOnClickListener(object : View.OnClickListener {
+//            override fun onClick(v: View?) {
+//
+//            binding.bottomNav
+//            }
+//
+//        })
+
+        binding.buttonCycling.setOnClickListener { binding.bottomNav }
+        binding.buttonRunning.setOnClickListener {  }
     }
+
 
     private fun onRunningClicked() {
         supportFragmentManager.commit {
@@ -37,4 +44,4 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.frame_content, CyclingFragment())
         }
     }
-}
+
