@@ -17,10 +17,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportFragmentManager.commit {
-            add(R.id.frame_content, RunningFragment())
+
+        binding.buttonCycling.setOnClickListener {
+            onCyclingClicked()
         }
+        binding.buttonRunning.setOnClickListener {
+            onRunningClicked()
+        }
+    }
 
+    private fun onRunningClicked() {
+        supportFragmentManager.commit {
+            replace(R.id.frame_content, RunningFragment())
+        }
+    }
 
+    private fun onCyclingClicked() {
+        supportFragmentManager.commit {
+            replace(R.id.frame_content, CyclingFragment())
+        }
     }
 }
