@@ -3,13 +3,12 @@ package com.example.recordkeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
+
 import androidx.fragment.app.commit
 import com.example.recordkeeper.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+
 import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.navigation.NavigationView
+
 
 
 class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
