@@ -29,17 +29,18 @@ class RunningFragment : Fragment(){
     }
 
     private fun setupClickListeners() {
-        binding.container5km.setOnClickListener { launchRunningRecordScreen() }
-        binding.container10km.setOnClickListener { launchRunningRecordScreen() }
-        binding.containerHalfMarathon.setOnClickListener { launchRunningRecordScreen() }
-        binding.containerFullMarathon.setOnClickListener { launchRunningRecordScreen() }
+        binding.container5km.setOnClickListener { launchRunningRecordScreen("5 km") }
+        binding.container10km.setOnClickListener { launchRunningRecordScreen("10 km") }
+        binding.containerHalfMarathon.setOnClickListener { launchRunningRecordScreen("Half Marathon") }
+        binding.containerFullMarathon.setOnClickListener { launchRunningRecordScreen("Full Marathon") }
     }
 
-    private fun launchRunningRecordScreen() {
+    private fun launchRunningRecordScreen(distance: String) {
         // context -  same as the MainActivity
         // In Activity class, we can use 'this' for Intent context argument.
         // In a Fragment, we can't use 'this', but we can utilize 'context' to get that access.
         val intent = Intent(context, EditRunningRecordActivity::class.java)
+        intent.putExtra("Distance", distance)
         startActivity(intent)
     }
 
